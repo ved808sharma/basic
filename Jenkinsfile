@@ -8,7 +8,10 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'build'
+                sh '''
+                    terraform init
+                    terraform apply --auto-approve
+                '''
             }
         }
     }
