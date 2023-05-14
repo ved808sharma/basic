@@ -1,5 +1,11 @@
 pipeline {
     agent any
+
+    tools {
+        terraform 'terraform144'
+        git 'scmgit'
+    }
+
     stages {
         stage('Checkout SCM'){
             steps {
